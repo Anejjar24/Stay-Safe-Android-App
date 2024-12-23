@@ -17,6 +17,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import ma.ensaj.staysafe10.MainActivity;
 import ma.ensaj.staysafe10.R;
+import ma.ensaj.staysafe10.ui.auth.LoginRegisterActivity;
+import ma.ensaj.staysafe10.ui.auth.forgotpassword.ForgotPasswordActivity;
 
 public class LoginTabFragment extends Fragment {
     private LoginViewModel loginViewModel;
@@ -56,6 +58,12 @@ public class LoginTabFragment extends Fragment {
             Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
         });
 
+        forgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ForgotPasswordActivity.class);
+            startActivity(intent);
+        });
+
+
         return root;
     }
 
@@ -64,7 +72,6 @@ public class LoginTabFragment extends Fragment {
         password.setTranslationX(800);
         forgotPassword.setTranslationX(800);
         loginButton.setTranslationY(0);
-
         email.setAlpha(0);
         password.setAlpha(0);
         forgotPassword.setAlpha(0);
