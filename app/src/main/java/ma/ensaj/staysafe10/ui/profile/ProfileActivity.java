@@ -1,36 +1,36 @@
-package ma.ensaj.staysafe10;
+package ma.ensaj.staysafe10.ui.profile;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import ma.ensaj.staysafe10.R;
 import ma.ensaj.staysafe10.model.User;
-import ma.ensaj.staysafe10.ui.profile.ProfileActivity;
 import ma.ensaj.staysafe10.ui.auth.user.UserViewModel;
-public class MainActivity extends AppCompatActivity {
+
+public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button button2;
     private UserViewModel userViewModel;
-    private TextView userID, userEmail, userPhone;
+    private TextView  userEmail, userPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_profile);
 
         initViews();
 
         // Ajout de valeurs par défaut pour vérifier que les TextView fonctionnent
-        userID.setText("ID: Non chargé");
+
         userEmail.setText("Email: Non chargé");
         userPhone.setText("Phone: Non chargé");
-
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getCurrentUser().observe(this, user -> {
@@ -41,31 +41,16 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "Received null user");
             }
         });
-
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Créer un Intent pour naviguer vers ProfileActivity
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                // Démarrer l'activité
-                startActivity(intent);
-            }
-        });
-
     }
 
     private void initViews() {
-        userID = findViewById(R.id.id);
+
         userEmail = findViewById(R.id.emailUser);
         userPhone = findViewById(R.id.phoneUser);
-        button2= findViewById(R.id.button2);
     }
 
     private void updateUI(User user) {
-        if (user.getId() != null) {
-            userID.setText("ID: " + user.getId());
-        }
+
         if (user.getEmail() != null) {
             userEmail.setText("Email: " + user.getEmail());
         }

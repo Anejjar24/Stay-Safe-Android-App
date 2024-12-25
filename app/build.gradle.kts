@@ -54,5 +54,6 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata:2.7.0")
     implementation("com.google.android.gms:play-services-maps:19.0.0")
     implementation("com.google.android.gms:play-services-location:19.0.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 }
