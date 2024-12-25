@@ -59,7 +59,7 @@
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/emailUser"
+                    android:id="@+id/emailUser1"
                     style="@style/TextAppearance.Material3.BodyMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/phoneUser"
+                    android:id="@+id/phoneUser1"
                     style="@style/TextAppearance.Material3.BodyMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -16,21 +16,20 @@ import ma.ensaj.staysafe10.model.User;
 import ma.ensaj.staysafe10.ui.auth.user.UserViewModel;
 
 public class ProfileActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "ProfileActivity";
     private UserViewModel userViewModel;
     private TextView  userEmail, userPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_profile);
-
+        setContentView(R.layout.avtivity_profile1);
         initViews();
-
-        // Ajout de valeurs par défaut pour vérifier que les TextView fonctionnent
+         //Ajout de valeurs par défaut pour vérifier que les TextView fonctionnent
 
         userEmail.setText("Email: Non chargé");
         userPhone.setText("Phone: Non chargé");
+
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getCurrentUser().observe(this, user -> {
@@ -41,12 +40,14 @@ public class ProfileActivity extends AppCompatActivity {
                 Log.d(TAG, "Received null user");
             }
         });
+
     }
 
     private void initViews() {
 
-        userEmail = findViewById(R.id.emailUser);
-        userPhone = findViewById(R.id.phoneUser);
+        userEmail = findViewById(R.id.emailUser1);
+        userPhone = findViewById(R.id.phoneUser1);
+
     }
 
     private void updateUI(User user) {
