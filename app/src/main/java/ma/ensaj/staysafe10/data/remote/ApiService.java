@@ -8,6 +8,7 @@ import ma.ensaj.staysafe10.model.User;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 public interface ApiService {
     @POST("auth/signup")
@@ -17,5 +18,6 @@ public interface ApiService {
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
     @POST("auth/forgot-password")
     Call<ResponseBody> resetPassword(@Body PasswordResetRequest request);
-
+    @GET("auth/user-info")
+    Call<User> getCurrentUser();
 }
