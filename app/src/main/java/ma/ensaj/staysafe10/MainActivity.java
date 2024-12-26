@@ -9,11 +9,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ma.ensaj.staysafe10.ui.auth.user.UserViewModel;
+import ma.ensaj.staysafe10.ui.location.MapsActivity;
 import ma.ensaj.staysafe10.ui.profile.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button button2;
+    private Button goToProfile,goToMap;
     private UserViewModel userViewModel;
     private TextView userID, userEmail, userPhone;
 
@@ -41,9 +42,18 @@ public class MainActivity extends AppCompatActivity {
 //        });
 //
 
-        button2.setOnClickListener(v -> {
+        goToProfile.setOnClickListener(v -> {
             try {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Log.e(TAG, "Error starting ProfileActivity", e);
+            }
+        });
+
+        goToMap.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             } catch (Exception e) {
                 Log.e(TAG, "Error starting ProfileActivity", e);
@@ -53,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-//        userID = findViewById(R.id.id);
-//        userEmail = findViewById(R.id.emailUser);
-//        userPhone = findViewById(R.id.phoneUser);
-        button2= findViewById(R.id.button2);
+
+        goToProfile= findViewById(R.id.button2);
+        goToMap= findViewById(R.id.button3);
+
     }
 
 //    private void updateUI(User user) {

@@ -8,7 +8,7 @@
     android:padding="16dp"
     android:gravity="center"
     android:background="@android:color/white"
-    tools:context=".ui.profile.ProfilActivity">
+    tools:context=".ui.profile.ProfileActivity">
 
     <!-- FrameLayout for Circle Image -->
     <FrameLayout
