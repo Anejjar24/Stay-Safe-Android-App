@@ -3,18 +3,19 @@ package ma.ensaj.staysafe10;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import ma.ensaj.staysafe10.ui.auth.user.UserViewModel;
-import ma.ensaj.staysafe10.ui.location.MapsActivity;
+import ma.ensaj.staysafe10.ui.contacts.ContactActivity;
+import ma.ensaj.staysafe10.ui.location.MapsActivity2;
 import ma.ensaj.staysafe10.ui.profile.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button goToProfile,goToMap;
+    private ImageView goToProfile,goToMap,goToContacts;
     private UserViewModel userViewModel;
     private TextView userID, userEmail, userPhone;
 
@@ -53,7 +54,15 @@ public class MainActivity extends AppCompatActivity {
 
         goToMap.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                Intent intent = new Intent(MainActivity.this, MapsActivity2.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Log.e(TAG, "Error starting ProfileActivity", e);
+            }
+        });
+        goToContacts.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, ContactActivity.class);
                 startActivity(intent);
             } catch (Exception e) {
                 Log.e(TAG, "Error starting ProfileActivity", e);
@@ -66,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         goToProfile= findViewById(R.id.button2);
         goToMap= findViewById(R.id.button3);
+        goToContacts= findViewById(R.id.contact);
 
     }
 

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="ButtonWhiteOutlined" parent="Widget.MaterialComponents.Button">
+        <!-- Fond blanc -->
+        <item name="backgroundTint">@android:color/white</item>
+        <!-- Bordure bleue -->
+        <item name="strokeColor">@color/purple_200</item>
+        <item name="strokeWidth">2dp</item>
+        <!-- Couleur du texte -->
+        <item name="android:textColor">@color/purple_200</item>
+        <!-- Rayon des coins -->
+        <item name="cornerRadius">12dp</item>
+    </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Material3.TitleLarge" />
 

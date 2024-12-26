@@ -48,6 +48,8 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.constraintlayout)
+
+
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.google.android.material:material:1.11.0")
     implementation ("androidx.lifecycle:lifecycle-viewmodel:2.7.0")

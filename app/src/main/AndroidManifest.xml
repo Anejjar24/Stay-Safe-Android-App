@@ -8,7 +8,9 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+
     <uses-feature android:name="android.hardware.location.gps" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -37,8 +39,6 @@
         android:theme="@style/Theme.StaySafe"
         tools:targetApi="31">
 
-
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -52,8 +52,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="YOUR_API_KEY" />
 
+        <activity
+            android:name=".ui.location.MapsActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_maps2" />
         <activity
             android:name=".ui.location.MapsActivity"
             android:exported="false"

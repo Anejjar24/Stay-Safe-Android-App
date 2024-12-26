@@ -6,7 +6,7 @@
             <item>
                 <shape
                     android:shape="oval"
-                    android:tint="?attr/colorError">
+                    android:tint="#81BFDA">
                     <solid android:color="#33FFFFFF" />
                 </shape>
             </item>
@@ -17,7 +17,7 @@
                 android:top="28dp">
                 <shape
                     android:shape="oval"
-                    android:tint="?attr/colorError">
+                    android:tint="#78B3CE">
                     <solid android:color="#99FFFFFF" />
                 </shape>
             </item>
@@ -27,7 +27,7 @@
                 android:start="56dp"
                 android:top="56dp">
                 <shape android:shape="oval">
-                    <solid android:color="?attr/colorError" />
+                    <solid android:color="#5A9AB6" />
                 </shape>
             </item>
         </layer-list>
